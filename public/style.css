@@ -1,4 +1,4 @@
-﻿/*** CSS reset start ***/
+/*** CSS reset start ***/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -69,8 +69,4 @@ a:visited {
 
 a:active {
     color: #d65d0e;
-}
-
-.z {
-    display: none;
 }
