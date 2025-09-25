@@ -109,5 +109,12 @@ badges {
         &:active {
             transform: translate(1px, 1px);
         }
+
+        img {
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: -webkit-optimize-contrast;
+        }
     }
 }
