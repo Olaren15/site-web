@@ -63,6 +63,7 @@ html {
 body {
     max-width: 80ch;
     margin: auto;
+    padding-bottom: 3em;
 }
 
 h1 {
