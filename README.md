@@ -6,4 +6,4 @@ Le code source de mon site web (qui est disponible sur
 
 ## License
 
-The code in this repository is licensed under the MIT License
+Le code source est licencié sous la LiLiQ-Rplus-1.1
