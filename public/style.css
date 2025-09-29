@@ -68,9 +68,15 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ren-content {
     max-width: 80ch;
-    margin: auto;
-    padding-bottom: 3em;
+    margin: 0 1em 3em 1em;
 }
 
 h1 {
@@ -101,7 +107,7 @@ a:active {
     color: #d65d0e;
 }
 
-badges {
+ren-badges {
     display: grid;
     grid-template-columns: repeat(auto-fill, 88px);
 
