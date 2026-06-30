@@ -1,0 +1,40 @@
+---
+interface Props {
+    href: string;
+    title: string;
+    src: string;
+    alt: string;
+}
+
+const { href, title, src, alt } = Astro.props;
+---
+
+<li>
+    <a href={href} title={title} rel="noopener noreferrer">
+        <img src={src} alt={alt} width="88" height="31" loading="lazy" />
+    </a>
+</li>
+
+<style>
+    li {
+        list-style: none !important;
+    }
+
+    a {
+        &:active {
+            transform: translate(1px, 1px);
+        }
+
+        &::before,
+        &&::after {
+            content: none;
+        }
+
+        img {
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: pixelated;
+        }
+    }
+</style>

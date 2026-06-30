@@ -1,0 +1,39 @@
+---
+import { type Lang } from "../i18n/utils";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const text = {
+    fr: {
+        thankYou: "Merci d'avoir visité!",
+    },
+    en: {
+        thankYou: "Thank you for visiting!",
+    },
+};
+---
+
+<footer>
+    <slot />
+    <p>{text[lang].thankYou}</p>
+</footer>
+
+<style>
+    footer {
+        width: 100%;
+        max-width: calc(var(--width) - var(--padding));
+
+        padding: 1em var(--padding);
+        margin-top: 2em;
+
+        border-top: solid 1px var(--background-400);
+    }
+
+    p {
+        margin-top: 1em;
+    }
+</style>

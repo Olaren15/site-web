@@ -1,0 +1,63 @@
+---
+import { Font } from "astro:assets";
+import { type Lang } from "../i18n/utils.ts";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/reset.css";
+import "../styles/main.css";
+import "../styles/theme.css";
+
+interface Props {
+    lang: Lang;
+    title: string;
+}
+
+const { lang, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{title}</title>
+        <Font cssVariable="--font-montserrat" />
+    </head>
+    <body>
+        <Nav lang={lang} />
+
+        <main>
+            <slot />
+        </main>
+
+        <Footer lang={lang}>
+            <slot name="footer" />
+        </Footer>
+    </body>
+</html>
+
+<style>
+    html {
+        background-color: var(--background-50);
+        color: var(--text-900);
+
+        font-family: var(--font-montserrat);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 100%;
+        max-width: calc(var(--width) - var(--padding));
+        padding: 0 var(--padding);
+    }
+
+    @view-transition {
+        navigation: auto;
+    }
+</style>

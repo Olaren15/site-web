@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import People from "../components/badges/People.astro";
+import Projects from "../components/badges/Projects.astro";
+---
+
+<Layout lang="fr" title="Catherine - Accueil">
+    <div class="md-look">
+        <hgroup>
+            <h1>Catherine <span>(elle/iel et accords féminins)</span></h1>
+            <h2>Incantatrice logicielle & nécromancienne d'ordinateurs</h2>
+        </hgroup>
+
+        <h3>À propos</h3>
+        <p>
+            Salut! moi c'est <strong>Catherine</strong>, une développeuse de Montréal qui touche à tout ce qui entoure
+            et ressemble à du logiciel! Du backend distribué jusqu'à l'allocation manuelle de mémoire, je suis très
+            polyvalente et sais m'adapter rapidement à une multitude de contextes.
+        </p>
+
+        <p>
+            J'ai un intérêt particulier pour la technologie qui a un impact positif et direct sur les sociétés,
+            l'environnement et la qualité de vie des gens. Je porte une attention spéciale sur le savoir-faire, la
+            qualité et la pérennité des solutions.
+        </p>
+
+        <p>
+            Si je ne suis pas en train de programmer, vous me trouverez probablement à taponner dans mes serveurs, à
+            jouer à FFXIV ou encore à écrire des cacapoteaux<sup><a href="#note-1" id="ref-1">[1]</a></sup> sur bluesky.
+        </p>
+
+        <h3>Sur le web</h3>
+        <ul>
+            <li>
+                <span class="bold">Forge</span>&nbsp:
+                {" "}
+                <a href="https://git.olaren.dev/Olaren" rel="me noopener noreferrer">Olaren@git.olaren.dev</a>
+            </li>
+            <li>
+                <span class="bold">Tangled</span>&nbsp:
+                {" "}
+                <a href="https://tangled.org/did:plc:6if5m2yo6kroprmmency3gt5" rel="me noopener noreferrer">
+                    olaren.dev
+                </a>
+            </li>
+            <li>
+                <span class="bold">Github</span>&nbsp:
+                {" "}
+                <a href="https://github.com/Olaren15" rel="me noopener noreferrer">Olaren15</a>
+            </li>
+            <li>
+                <span class="bold">Bluesky</span>&nbsp:
+                {" "}
+                <a href="https://bsky.app/profile/did:plc:6if5m2yo6kroprmmency3gt5" rel="me noopener noreferrer">
+                    olaren.dev
+                </a>
+            </li>
+            <li><span class="bold">Courriel</span>&nbsp: contact [arobas] olaren [point] dev</li>
+            <li><span class="bold">Signal</span>&nbsp: Demandez-moi si on se connaît</li>
+        </ul>
+
+        <h3>Projets notables</h3>
+        <ul>
+            <li>
+                <a class="bold" href="https://git.olaren.dev/Olaren/ffxiv-status-contrast" rel="noopener noreferrer">
+                    ffxiv-status-contrast
+                </a>&nbsp: Plugin pour FFXIV pour régler des problèmes de contraste
+            </li>
+            <li>
+                <a class="bold" href="https://git.olaren.dev/Olaren/ffxiv-easy-translate" rel="noopener noreferrer">
+                    ffxiv-easy-translate
+                </a>&nbsp: Plugin de traduction pour FFXIV
+            </li>
+            <li>
+                <a class="bold" href="https://git.olaren.dev/Olaren/maptoposter" rel="noopener noreferrer">
+                    maptoposter
+                </a>&nbsp: Script de génération d'affiches de réseaux de transport en commun
+            </li>
+            <li>
+                <span class="bold">Serveurs domestiques</span>&nbsp: Serveurs qui hébergent plusieurs applications pour
+                moi, ma famille et mes amis
+            </li>
+        </ul>
+
+        <h3>Le coin des boutons</h3>
+
+        <h4>Personnes</h4>
+        <People />
+
+        <h4>Projets</h4>
+        <Projects />
+    </div>
+
+    <ol slot="footer">
+        <li id="note-1">Traduction humoristique de "shitpost". <a href="#ref-1">retour</a></li>
+    </ol>
+</Layout>
+
+<style>
+    hgroup {
+        margin-bottom: 2em;
+
+        h1 {
+            margin: 0;
+
+            span {
+                font-size: 1rem;
+                font-weight: normal;
+            }
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    @keyframes highlight-fade {
+        0% {
+            background-color: transparent;
+        }
+        20% {
+            background-color: var(--background-200);
+        }
+        100% {
+            background-color: transparent;
+        }
+    }
+
+    li {
+        &:target {
+            animation: highlight-fade 4s ease forwards;
+        }
+    }
+</style>

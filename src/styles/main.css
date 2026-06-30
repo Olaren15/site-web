@@ -1,0 +1,166 @@
+/* Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* Increase line-height */
+    line-height: 1.5;
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/* global width and padding */
+:root {
+    --width: 50rem;
+    --padding: 1rem;
+}
+
+/* Basic header styles */
+
+h1 {
+    font-size: 3em;
+    font-weight: 800;
+    margin: 1.5em 0 0.5em 0;
+
+    color: var(--text-800);
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 1.4em 0 0.5em 0;
+
+    color: var(--text-700);
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 650;
+    margin: 1.2em 0 0.5em 0;
+
+    color: var(--text-600);
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 1.1em 0 0.5em 0;
+
+    color: var(--text-600);
+}
+
+/* some margin on paragraphs */
+p {
+    margin-bottom: 1.5em;
+}
+
+/* make thinks pretty after the reset */
+a {
+    text-decoration: none;
+    color: var(--accent-800);
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: var(--accent-900);
+    }
+}
+
+ol li {
+    list-style: decimal inside;
+}
+
+sup {
+    font-size: 0.7em;
+    vertical-align: top;
+}
+
+strong,
+.bold {
+    font-weight: bold;
+}
+
+/* give a Markdown look to headers and lists */
+.md-look {
+    h1::before {
+        content: "# ";
+    }
+
+    h2::before {
+        content: "## ";
+    }
+
+    h3::before {
+        content: "### ";
+    }
+
+    h4::before {
+        content: "#### ";
+    }
+
+    h5::before {
+        content: "##### ";
+    }
+
+    h6::before {
+        content: "###### ";
+    }
+
+    ul li {
+        list-style: "-  " inside;
+    }
+}

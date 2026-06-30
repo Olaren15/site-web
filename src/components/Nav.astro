@@ -1,0 +1,86 @@
+---
+import { type Lang } from "../i18n/utils.ts";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const hrefForLang = (href: string, lang: Lang) => {
+    return lang === "fr" ? href : "/en" + href;
+};
+
+const text = {
+    fr: {
+        home: "Accueil",
+        swapLang: "English",
+    },
+    en: {
+        home: "Home",
+        swapLang: "Français",
+    },
+};
+---
+
+<header>
+    <nav>
+        <a class="logo" href={hrefForLang("/", lang)}>olaren.dev</a>
+        <ul>
+            <!-- remove en slug if present to get clean path. Also use other language -->
+            <li>
+                <a href={hrefForLang(Astro.url.pathname.replace("/en", ""), lang === "fr" ? "en" : "fr")}
+                    >{text[lang].swapLang}</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+
+        margin-bottom: 2em;
+
+        background-color: var(--background-200);
+        border-bottom: 1px solid var(--background-400);
+    }
+
+    nav {
+        width: 100%;
+        max-width: calc(var(--width) - var(--padding));
+
+        padding: 1em var(--padding);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        flex-wrap: wrap;
+        gap: 1em;
+
+        font-weight: bold;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        color: var(--primary-800);
+    }
+
+    ul {
+        display: flex;
+        gap: 1em;
+    }
+
+    li {
+        list-style-type: none;
+
+        a {
+            color: var(--primary-800);
+        }
+    }
+</style>

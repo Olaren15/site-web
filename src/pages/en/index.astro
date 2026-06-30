@@ -1,0 +1,111 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import People from "../../components/badges/People.astro";
+import Projects from "../../components/badges/Projects.astro";
+---
+
+<Layout lang="en" title="Catherine - Home">
+    <div class="md-look">
+        <hgroup>
+            <h1>Catherine <span>(she/her/they/them)</span></h1>
+            <h2>Software Spellcrafter & Computer Necromancer</h2>
+        </hgroup>
+
+        <h3>About</h3>
+        <p>
+            Hey! I'm <strong>Catherine</strong>, a Montréal based developer who tinkers with everything that looks like
+            and revolves around software. From distributed backends all the way to manual memory allocation, I'm very
+            versatile and I adapt quickly to all sorts of contexts.
+        </p>
+
+        <p>
+            I have a special interest for technology that brings a direct and positive impact on societies, the
+            environment and people's quality of life. I pay special attention to craftsmanship, quality and the
+            long-term sustainability of my solutions.
+        </p>
+
+        <p>
+            If I'm not coding, you can probably find me fiddling around with my servers, playing FFXIV or writing
+            shitposts on bluesky.
+        </p>
+
+        <h3>On the Web</h3>
+        <ul>
+            <li>
+                <span class="bold">Forge</span>:
+                {" "}
+                <a href="https://git.olaren.dev/Olaren" rel="me noopener noreferrer">Olaren@git.olaren.dev</a>
+            </li>
+            <li>
+                <span class="bold">Tangled</span>:
+                {" "}
+                <a href="https://tangled.org/did:plc:6if5m2yo6kroprmmency3gt5" rel="me noopener noreferrer">
+                    olaren.dev
+                </a>
+            </li>
+            <li>
+                <span class="bold">Github</span>:
+                {" "}
+                <a href="https://github.com/Olaren15" rel="me noopener noreferrer">Olaren15</a>
+            </li>
+            <li>
+                <span class="bold">Bluesky</span>
+                {" : "}
+                <a href="https://bsky.app/profile/did:plc:6if5m2yo6kroprmmency3gt5" rel="me noopener noreferrer">
+                    olaren.dev
+                </a>
+            </li>
+            <li><span class="bold">Email</span>: contact [at] olaren [dot] dev</li>
+            <li><span class="bold">Signal</span>: Ask me if we know each other</li>
+        </ul>
+
+        <h3>Notable Projects</h3>
+        <ul>
+            <li>
+                <a class="bold" href="https://git.olaren.dev/Olaren/ffxiv-status-contrast" rel="noopener noreferrer">
+                    ffxiv-status-contrast
+                </a>: FFXIV plugin to fix contrast issues
+            </li>
+            <li>
+                <a class="bold" href="https://git.olaren.dev/Olaren/ffxiv-easy-translate" rel="noopener noreferrer">
+                    ffxiv-easy-translate
+                </a>: Translation plugin for FFXIV
+            </li>
+            <li>
+                <a class="bold" href="https://git.olaren.dev/Olaren/maptoposter" rel="noopener noreferrer">
+                    maptoposter
+                </a>: Script to generate public transit network posters
+            </li>
+            <li>
+                <span class="bold">Home Servers</span>: Servers hosting multiple apps for my friends, family and myself
+            </li>
+        </ul>
+
+        <h3>The Button Corner</h3>
+
+        <h4>People</h4>
+        <People />
+
+        <h4>Projects</h4>
+        <Projects />
+    </div>
+</Layout>
+
+<style>
+    hgroup {
+        margin-bottom: 2em;
+
+        h1 {
+            margin: 0;
+
+            span {
+                font-size: 1rem;
+                font-weight: normal;
+            }
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+</style>
