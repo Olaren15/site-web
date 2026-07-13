@@ -1,7 +1,7 @@
 ---
 title: "Un an à Montréal"
 description: "Bilan de ce qui s'est passé dans ma vie depuis mon déménagement à Montréal qui a eu lieu il y a déjà un an!"
-pubDate: "2026-06-12"
+pubDate: "2026-07-12"
 ---
 
 Et oui, déjà un an à habiter la métropole québécoise. C'est fou à quel point le

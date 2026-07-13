@@ -1,7 +1,7 @@
 ---
 title: "One Year in Montréal"
 description: "Summary of everything that happened in my life since moving to Montréal a year ago!"
-pubDate: "2026-06-12"
+pubDate: "2026-07-12"
 ---
 
 Already a whole year living in Québec's metropolis! It's fascinating how fast
