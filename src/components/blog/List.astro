@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { type Lang } from "../../i18n/utils";
+import ListLink from "./ListLink.astro";
+
+interface Props {
+    lang: Lang;
+    posts: CollectionEntry<"blogFr">[] | CollectionEntry<"blogEn">[];
+}
+
+const { posts, lang } = Astro.props;
+
+const text = {
+    fr: {
+        blog: "Blogue",
+    },
+    en: {
+        blog: "Blog",
+    },
+};
+---
+
+<div>
+    <h1>{text[lang].blog}</h1>
+    <ul>
+        {posts.map((post) => <ListLink post={post} lang={lang} />)}
+    </ul>
+</div>

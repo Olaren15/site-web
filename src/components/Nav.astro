@@ -1,23 +1,20 @@
 ---
-import { type Lang } from "../i18n/utils.ts";
+import { type Lang, hrefForLang } from "../i18n/utils";
 
 interface Props {
     lang: Lang;
+    hideLanguageSwitcher?: boolean;
 }
 
-const { lang } = Astro.props;
-
-const hrefForLang = (href: string, lang: Lang) => {
-    return lang === "fr" ? href : "/en" + href;
-};
+const { lang, hideLanguageSwitcher } = Astro.props;
 
 const text = {
     fr: {
-        home: "Accueil",
+        blog: "Blogue",
         swapLang: "English",
     },
     en: {
-        home: "Home",
+        blog: "Blog",
         swapLang: "Français",
     },
 };
@@ -27,12 +24,18 @@ const text = {
     <nav>
         <a class="logo" href={hrefForLang("/", lang)}>olaren.dev</a>
         <ul>
-            <!-- remove en slug if present to get clean path. Also use other language -->
             <li>
-                <a href={hrefForLang(Astro.url.pathname.replace("/en", ""), lang === "fr" ? "en" : "fr")}
-                    >{text[lang].swapLang}</a
-                >
+                <a href={hrefForLang("/blog", lang)}>{text[lang].blog}</a>
             </li>
+            {
+                !hideLanguageSwitcher && (
+                    <li>
+                        <a href={hrefForLang(Astro.url.pathname.replace("/en", ""), lang === "fr" ? "en" : "fr")}>
+                            {text[lang].swapLang}
+                        </a>
+                    </li>
+                )
+            }
         </ul>
     </nav>
 </header>

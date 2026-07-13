@@ -1,6 +1,6 @@
 ---
 import { Font } from "astro:assets";
-import { type Lang } from "../i18n/utils.ts";
+import { type Lang } from "../i18n/utils";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
@@ -11,9 +11,10 @@ import "../styles/theme.css";
 interface Props {
     lang: Lang;
     title: string;
+    hideLanguageSwitcher?: boolean;
 }
 
-const { lang, title } = Astro.props;
+const { lang, title, hideLanguageSwitcher } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,7 +26,7 @@ const { lang, title } = Astro.props;
         <Font cssVariable="--font-montserrat" />
     </head>
     <body>
-        <Nav lang={lang} />
+        <Nav lang={lang} hideLanguageSwitcher={hideLanguageSwitcher} />
 
         <main>
             <slot />

@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import BlogList from "../../components/blog/List.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const lang = "fr";
+const articles = await getCollection("blogFr");
+---
+
+<Layout lang={lang} title="Catherine - Blogue">
+    <div class="md-look">
+        <BlogList lang={lang} posts={articles} />
+    </div>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import { type Lang } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+
+interface Props {
+    lang: Lang;
+    post: CollectionEntry<"blogFr"> | CollectionEntry<"blogEn">;
+}
+
+const { post, lang } = Astro.props;
+
+const publishDateString = post.data.pubDate.toISOString().slice(0, 10);
+const { Content } = await render(post);
+---
+
+<Layout lang={lang} title={post.data.title} hideLanguageSwitcher={true}>
+    <article class="md-look">
+        <header>
+            <time datetime={publishDateString}>{publishDateString}</time>
+            <hgroup>
+                <h1>{post.data.title}</h1>
+                <p>{post.data.description}</p>
+            </hgroup>
+        </header>
+
+        <section>
+            <Content />
+        </section>
+    </article>
+</Layout>
+
+<style>
+    time {
+        font-size: 0.8em;
+    }
+</style>
