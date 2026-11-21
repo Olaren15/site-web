@@ -23,7 +23,7 @@ const { lang, title, hideLanguageSwitcher } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{title}</title>
-        <Font cssVariable="--font-montserrat" />
+        <Font cssVariable="--font" />
     </head>
     <body>
         <Nav lang={lang} hideLanguageSwitcher={hideLanguageSwitcher} />
@@ -43,7 +43,7 @@ const { lang, title, hideLanguageSwitcher } = Astro.props;
         background-color: var(--background-50);
         color: var(--text-900);
 
-        font-family: var(--font-montserrat);
+        font-family: var(--font);
     }
 
     body {
